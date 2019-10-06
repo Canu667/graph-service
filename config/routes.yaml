@@ -1,0 +1,9 @@
+rest_controller:
+    resource: ../src/Controller
+    type: annotation
+    prefix: /
+
+openapi_json:
+    path:       /openapi.json
+    controller: App\Controller\ApiController::openApiJson
+    methods:    [GET]

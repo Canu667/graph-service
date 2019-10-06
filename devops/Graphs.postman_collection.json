@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "55d34156-9e9a-4261-b3bb-581c6fd9cce3",
+		"name": "Graphs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Node",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Duper\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/node",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"node"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Connect Nodes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fromId\": 1,\n\t\"toId\": 2,\n\t\"weight\": 50\n}"
+				},
+				"url": {
+					"raw": "http://localhost/node/connect",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"node",
+						"connect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get node",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost/path/258",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"path",
+						"258"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Disconnect Nodes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fromId\": 174,\n\t\"toId\": 175\n}"
+				},
+				"url": {
+					"raw": "http://localhost/node/disconnect",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"node",
+						"disconnect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Path",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost/node/177",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"node",
+						"177"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update node",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 173,\n\t\"name\": \"Awesome Troublesome\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/node",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"node"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

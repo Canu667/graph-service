@@ -1,0 +1,35 @@
+version: '3'
+services:
+    graph-nginx:
+        image: nginx:latest
+        ports:
+            - "80:80"
+        volumes:
+            - ./devops/nginx/graph-nginx.conf:/etc/nginx/conf.d/default.conf
+            - ./public/static:/static
+        links:
+            - graph-app
+
+    graph-app:
+        container_name: graph-app
+        image: nanoninja/php-fpm
+        expose:
+            - "9000"
+        volumes:
+            - .:/var/www/html
+            - ./devops/wait-for-it.sh:/var/www/html/wait-for-it.sh
+        links:
+            - neo4j
+        depends_on:
+            - neo4j
+
+    neo4j:
+        image: neo4j:3.0
+        environment:
+            NEO4J_AUTH: neo4j/edgyBruh
+        expose:
+            - "7687"
+        ports:
+            - "7474:7474"
+        volumes:
+            - ./data:/data

@@ -1,0 +1,7 @@
+neo4j:
+    connections:
+        default:
+            dsn: '%env(resolve:NEO4J_DEFAULT_CONNECTION_DSN)%'
+    entity_managers:
+        default:
+            cache_dir: "%kernel.cache_dir%/neo4j"
