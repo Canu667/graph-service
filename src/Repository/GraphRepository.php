@@ -39,6 +39,7 @@ class GraphRepository
     public function deletePath(Path $path)
     {
         $this->em->remove($path);
+        $this->em->flush();
     }
 
     public function getShortestRoute($fromNode, $toNode): ?array
