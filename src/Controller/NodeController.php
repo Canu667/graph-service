@@ -247,13 +247,13 @@ class NodeController extends AbstractFOSRestController
         $fromNode = $this->nodeRepository->findNode($connectDto->getFromId());
         $toNode = $this->nodeRepository->findNode($connectDto->getToId());
 
-        $connectDto = (new Path())
+        $path = (new Path())
             ->setStartNode($fromNode)
             ->setEndNode($toNode)
             ->setWeight($connectDto->getWeight());
 
-        $fromNode->getOutgoingPaths()->add($connectDto);
-        $toNode->getIncomingPaths()->add($connectDto);
+        $fromNode->getOutgoingPaths()->add($path);
+        $toNode->getIncomingPaths()->add($path);
 
         $this->nodeRepository->saveNode($fromNode);
         $this->nodeRepository->saveNode($toNode);

@@ -22,6 +22,9 @@
         "zircote/swagger-php": "^3.0"
     },
     "require-dev": {
+        "behat/behat": "^3.5",
+        "behat/symfony2-extension": "^2.1",
+        "imbo/behat-api-extension": "^2.2"
     },
     "config": {
         "preferred-install": {

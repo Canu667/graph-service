@@ -1,6 +1,37 @@
 {
+    "beberlei/assert": {
+        "version": "v2.9.9"
+    },
+    "behat/behat": {
+        "version": "v3.5.0"
+    },
+    "behat/gherkin": {
+        "version": "v4.6.0"
+    },
+    "behat/symfony2-extension": {
+        "version": "2.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.1",
+            "ref": "158be9d4b4c2127d9ec741c97e3cb1b6610b5294"
+        },
+        "files": [
+            "behat.yml.dist",
+            "config/bootstrap.php",
+            "features/bootstrap/FeatureContext.php",
+            "features/bootstrap/bootstrap.php",
+            "features/demo.feature"
+        ]
+    },
+    "behat/transliterator": {
+        "version": "v1.2.0"
+    },
     "clue/stream-filter": {
         "version": "v1.4.1"
+    },
+    "container-interop/container-interop": {
+        "version": "1.2.0"
     },
     "doctrine/annotations": {
         "version": "1.0",
@@ -81,6 +112,9 @@
     "doctrine/reflection": {
         "version": "v1.0.0"
     },
+    "firebase/php-jwt": {
+        "version": "v5.0.0"
+    },
     "friendsofsymfony/rest-bundle": {
         "version": "2.2",
         "recipe": {
@@ -113,6 +147,9 @@
     },
     "guzzlehttp/psr7": {
         "version": "1.6.1"
+    },
+    "imbo/behat-api-extension": {
+        "version": "v2.2.1"
     },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
@@ -191,6 +228,9 @@
     },
     "symfony/cache-contracts": {
         "version": "v1.1.5"
+    },
+    "symfony/class-loader": {
+        "version": "v3.4.31"
     },
     "symfony/config": {
         "version": "v4.3.4"
@@ -328,6 +368,19 @@
     },
     "symfony/templating": {
         "version": "v4.3.4"
+    },
+    "symfony/translation": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "2ad9d2545bce8ca1a863e50e92141f0b9d87ffcd"
+        },
+        "files": [
+            "config/packages/translation.yaml",
+            "translations/.gitignore"
+        ]
     },
     "symfony/translation-contracts": {
         "version": "v1.1.6"
