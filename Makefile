@@ -3,7 +3,7 @@ install:
 
 	docker-compose up -d
 	docker exec -it graph-app /bin/bash ./wait-for-it.sh db:3306
-	docker exec -it graph-app ./bin/console doctrine:fixtures:load -q
+	docker exec -it graph-app ./bin/console app:create-fixtures
 
 runTests:
-	docker exec -it graph-app ./bin/console app:create-fixtures
+	./vendor/bin/behat
