@@ -166,6 +166,29 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Find the shortest path",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost/shortest-path/3/8",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shortest-path",
+						"3",
+						"8"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

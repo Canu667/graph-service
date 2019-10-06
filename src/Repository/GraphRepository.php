@@ -40,4 +40,17 @@ class GraphRepository
     {
         $this->em->remove($path);
     }
+
+    public function getShortestRoute($fromNode, $toNode): ?array
+    {
+        $query = $this->em->createQuery(sprintf("MATCH (start:Node{name:'%s'}), (end:Node{name:'%s'})
+                                         CALL algo.shortestPath.stream(start, end, 'weight', {direction:'OUTGOING'})
+                                         YIELD nodeId, cost
+                                         MATCH (other:Node) WHERE id(other) = nodeId
+                                         RETURN other.name AS name, cost
+                                         ", $fromNode, $toNode));
+        $result = $query->execute();
+
+        return $result;
+    }
 }
