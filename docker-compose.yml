@@ -28,10 +28,12 @@ services:
         environment:
             NEO4J_AUTH: neo4j/edgyBruh
             NEO4J_dbms_security_procedures_unrestricted: algo.*
+            NEO4J_dbms_security_auth__enabled: 'false'
         expose:
             - "7687"
         ports:
             - "7474:7474"
+            - "7687:7687"
         volumes:
             - ./data:/data
             - ./resources/neo4j/plugins:/plugins
