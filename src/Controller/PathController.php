@@ -60,17 +60,17 @@ class PathController extends AbstractFOSRestController
      *     ),
      *   )
      * )
-     * @QueryParam(name="fromName", requirements="\d+")
-     * @QueryParam(name="toName", requirements="\d+")
-     * @Rest\Get("/shortest-path/{fromName}/{toName}")
+     * @QueryParam(name="fromId", requirements="\d+")
+     * @QueryParam(name="toId", requirements="\d+")
+     * @Rest\Get("/shortest-path/{fromId}/{toId}")
      *
-     * @param string $fromName
-     * @param string $toName
+     * @param int $fromId
+     * @param int $toId
      *
      * @return Response
      */
-    public function getShortestPath(string $fromName, string $toName)
+    public function getShortestPath(int $fromId, int $toId)
     {
-        return new JsonResponse($this->nodeRepository->getShortestRoute($fromName, $toName));
+        return new JsonResponse($this->nodeRepository->getShortestRoute($fromId, $toId));
     }
 }
