@@ -4,7 +4,7 @@ Feature:
   I want to test the following scenarios
 
   Scenario: Get shortest path
-    When I request "shortest-path/3/8" using HTTP GET
+    When I request "shortest-path/1/3" using HTTP GET
     Then the response code is 200
     Then the response body contains JSON:
     """
